@@ -47,15 +47,27 @@ namespace ConsoleApp1
 			//Console.WriteLine(beverage3.GetDescription() + " $" + beverage3.Cost());
 
 			//工厂方法模式
-			NYPizzaStore nyPizzaStore = new NYPizzaStore();
-			ChicagoPizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
+			//NYPizzaStore nyPizzaStore = new NYPizzaStore();
+			//ChicagoPizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
 
-			Pizza pizza1 = null;
-			Pizza pizza2 = null;
-			pizza1 = nyPizzaStore.OrderPizza("cheese");
-			pizza2 = chicagoPizzaStore.OrderPizza("clam");
-			Console.WriteLine("pizza1 name: " + pizza1.GetName());
-			Console.WriteLine("pizza2 name: " + pizza2.GetName());
+			//Pizza pizza1 = null;
+			//Pizza pizza2 = null;
+			//pizza1 = nyPizzaStore.OrderPizza("cheese");
+			//pizza2 = chicagoPizzaStore.OrderPizza("clam");
+			//Console.WriteLine("pizza1 name: " + pizza1.GetName());
+			//Console.WriteLine("pizza2 name: " + pizza2.GetName());
+
+			//命令模式
+			SimpleRemoteControl control = new SimpleRemoteControl();
+			Light light = new Light();
+			LightOnCommand lightCommand = new LightOnCommand(light);
+			control.SetCommand(lightCommand);
+			control.ButtonWasPressed();
+
+			GarageDoor door = new GarageDoor();
+			GarageDoorOpenCommand doorCommand = new GarageDoorOpenCommand(door);
+			control.SetCommand(doorCommand);
+			control.ButtonWasPressed();
 
 		}
 	}
