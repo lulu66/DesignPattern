@@ -58,17 +58,31 @@ namespace ConsoleApp1
 			//Console.WriteLine("pizza2 name: " + pizza2.GetName());
 
 			//命令模式
-			SimpleRemoteControl control = new SimpleRemoteControl();
-			Light light = new Light();
-			LightOnCommand lightCommand = new LightOnCommand(light);
-			control.SetCommand(lightCommand);
-			control.ButtonWasPressed();
+			//SimpleRemoteControl control = new SimpleRemoteControl();
+			//Light light = new Light();
+			//LightOnCommand lightCommand = new LightOnCommand(light);
+			//control.SetCommand(lightCommand);
+			//control.ButtonWasPressed();
 
-			GarageDoor door = new GarageDoor();
-			GarageDoorOpenCommand doorCommand = new GarageDoorOpenCommand(door);
-			control.SetCommand(doorCommand);
-			control.ButtonWasPressed();
+			//GarageDoor door = new GarageDoor();
+			//GarageDoorOpenCommand doorCommand = new GarageDoorOpenCommand(door);
+			//control.SetCommand(doorCommand);
+			//control.ButtonWasPressed();
 
+			//适配器模式
+			Monkey monkey = new Monkey();
+			monkey.MonkeySpeak();
+			monkey.MonkeyWalk();
+			Turkey testTurkey = new Turkey();
+			MonkeyAdaptor adaptor = new MonkeyAdaptor(testTurkey);
+			TestMonkey(adaptor);
+
+		}
+
+		static void TestMonkey(Monkey monkey)
+		{
+			monkey.MonkeySpeak();
+			monkey.MonkeyWalk();
 		}
 	}
 
