@@ -70,12 +70,18 @@ namespace ConsoleApp1
 			//control.ButtonWasPressed();
 
 			//适配器模式
-			Monkey monkey = new Monkey();
-			monkey.MonkeySpeak();
-			monkey.MonkeyWalk();
-			Turkey testTurkey = new Turkey();
-			MonkeyAdaptor adaptor = new MonkeyAdaptor(testTurkey);
-			TestMonkey(adaptor);
+			//Monkey monkey = new Monkey();
+			//monkey.MonkeySpeak();
+			//monkey.MonkeyWalk();
+			//Turkey testTurkey = new Turkey();
+			//MonkeyAdaptor adaptor = new MonkeyAdaptor(testTurkey);
+			//TestMonkey(adaptor);
+
+			//迭代器模式
+			DinerMenu dinerMenu = new DinerMenu();
+			PancakeHouseMenu houseMenu = new PancakeHouseMenu();
+			Witress witress = new Witress(dinerMenu, houseMenu);
+			witress.PrintMenu();
 
 		}
 
