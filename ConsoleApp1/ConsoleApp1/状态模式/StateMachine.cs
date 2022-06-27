@@ -26,5 +26,27 @@ namespace ConsoleApp1
 				state = NO_QUARTER;
 			}
 		}
+
+		//
+		public void InsertQuarter()
+		{
+			if(state == HAS_QUARTER)
+			{
+				Console.WriteLine("You can not insert another quarter.");
+			}
+			else if(state == SOLD_OUT)
+			{
+				Console.WriteLine("the mochine is sold out, you can not insert another quarter.");
+			}
+			else if(state == SOLD)
+			{
+				Console.WriteLine("Please wait, we're already giving you a candy.");
+			}
+			else if(state == NO_QUARTER)
+			{
+				state = HAS_QUARTER;
+				Console.WriteLine("You inserted a quarter.");
+			}
+		}
 	}
 }
