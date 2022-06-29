@@ -84,20 +84,32 @@ namespace ConsoleApp1
 			//witress.PrintMenu();
 
 			//组合模式
-			MenuComponent menu1 = new Menu2("Pancake House Menu", "Breakfast");
-			MenuComponent menu2 = new Menu2("Lunch House Menu", "Lunch");
-			MenuComponent menu3 = new Menu2("Dinner House Menu", "Dinner");
+			//MenuComponent menu1 = new Menu2("Pancake House Menu", "Breakfast");
+			//MenuComponent menu2 = new Menu2("Lunch House Menu", "Lunch");
+			//MenuComponent menu3 = new Menu2("Dinner House Menu", "Dinner");
 
-			MenuComponent allMenu = new Menu2("All Menu", "All Menu Combined");
-			allMenu.Add(menu1);
-			allMenu.Add(menu2);
-			allMenu.Add(menu3);
+			//MenuComponent allMenu = new Menu2("All Menu", "All Menu Combined");
+			//allMenu.Add(menu1);
+			//allMenu.Add(menu2);
+			//allMenu.Add(menu3);
 
-			menu2.Add(new MenuItem2("lunch1", "first lunch", true, 34.77f));
-			menu2.Add(new MenuItem2("lunch2", "second lunch", true, 13.9f));
+			//menu2.Add(new MenuItem2("lunch1", "first lunch", true, 34.77f));
+			//menu2.Add(new MenuItem2("lunch2", "second lunch", true, 13.9f));
 
-			Waitress2 waitress = new Waitress2(allMenu);
-			waitress.PrintMenu();
+			//Waitress2 waitress = new Waitress2(allMenu);
+			//waitress.PrintMenu();
+
+			//状态模式
+			GumballMachine gumballMachine = new GumballMachine(5);
+
+			gumballMachine.InsertQuarter();
+			gumballMachine.TurnCrank();
+
+			gumballMachine.InsertQuarter();
+			gumballMachine.TurnCrank();
+
+			gumballMachine.InsertQuarter();
+			gumballMachine.TurnCrank();
 
 		}
 
